@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="Body.h" />
+    <ClInclude Include="Gravity.h" />
+    <ClInclude Include="Prototypes.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
