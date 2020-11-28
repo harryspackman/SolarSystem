@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+#include <array>
 
 
 
@@ -13,23 +13,27 @@ class Body {
 public:
 
 	double mass;
-	double pos[3];
-	double vel[3];
-	double acc[3];
-	double new_pos[3];
-	double new_vel[3];
-	double new_acc[3];
+	array <double,3> pos;
+	array <double, 3> vel;
+	array <double, 3> acc;
+	array <double, 3> new_pos;
+	array <double, 3> new_vel;
+	array <double, 3> new_acc;
 
 	
-	Body(double);
+	Body(double, array <double, 3>, array <double, 3>, array <double, 3>);
 
 	
 };
 
 
 //constuctor function for body
-Body::Body(double a) {
+Body::Body(double a, array<double, 3> b, array <double, 3> c, array <double, 3> d) {
 	mass = a;
+	pos = b;
+	vel = c;
+	acc = d;
+	
 
 }
 
