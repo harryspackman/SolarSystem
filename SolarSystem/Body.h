@@ -10,6 +10,10 @@ using namespace std;
 
 class Body {
 
+private:
+
+	static int count;
+
 public:
 
 	double mass;
@@ -23,7 +27,11 @@ public:
 	
 	Body(double, array <double, 3>, array <double, 3>, array <double, 3>);
 
-	
+	static int totalObjects(void) {
+
+		return count;
+	}
+
 };
 
 
@@ -34,6 +42,7 @@ Body::Body(double a, array<double, 3> b, array <double, 3> c, array <double, 3> 
 	vel = c;
 	acc = d;
 	
+	count++;
 
 }
 

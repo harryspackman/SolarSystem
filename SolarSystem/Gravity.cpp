@@ -3,7 +3,7 @@
 
 #define G 6.6708e-11
 
-//taken verlet integrals and vectors from "https://en.wikipedia.org/wiki/Verlet_integration"
+//adapted verlet integrals and vectors from "https://en.wikipedia.org/wiki/Verlet_integration"
 
 //passing into function time increment, and the two objects by reference
 void calculate_acceleration(Body &body1, Body &body2) {
@@ -43,11 +43,10 @@ void update_position(Body &body1, Body &body2) {
 		body2.new_pos[i] = body2.pos[i] + body2.vel[i] * dt + body2.acc[i] * (dt*dt*0.5);
 		body2.pos[i] = body2.new_pos[i];
 
-		//cout << "In the position function:" << body1.new_acc[i] << "\t" << body2.new_acc[i] << endl;
 
 	}
 
-	fstream myfile("mercury16.txt", fstream::app);
+	/*fstream myfile("mercury16.txt", fstream::app);
 	if (myfile.is_open()) {
 
 		myfile << body1.pos[0] << "\t" << body1.pos[1] << "\t" << body2.pos[0] << "\t" << body2.pos[1] << endl;
@@ -55,7 +54,7 @@ void update_position(Body &body1, Body &body2) {
 	}
 
 	myfile.close();
-
+	*/
 }
 
 //calculates new velocity

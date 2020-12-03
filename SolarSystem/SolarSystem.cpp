@@ -6,29 +6,46 @@
 #include "Body.h"
 #include "Gravity.cpp"
 
-
-using namespace std;
+int Body::count;
 
 int main()
 {
 
-	//initialising objects
-	Body sun(1.989e30, { 5, 5, 5 }, { 0.1, 0.1, 0.1 }, { 0.0, 0.0, 0.0 });// mass, position vector, velocity vector, acceleration vector
-	Body mercury(3.285e23, { 6.98e9, 0.0, 0.0 }, { 0.0, 3.5e4, 0.0 }, { 0.0, 0.0, 0.0 }); //currently using mercury's mass and distance to the sun
+	//initialising objects all data taken from NASA planetary factsheets eg. https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html 
+	Body Sun(1.989e30, { 0.0, 0.0, 0.0 }, { 0.1, 0.1, 0.1 }, { 0.0, 0.0, 0.0 });// mass, position vector, velocity vector, acceleration vector
+	Body Mercury(3.285e23, { 69.817e9, 0.0, 0.0 }, { 0.0, 38.86e4, 0.0 }, { 0.0, 0.0, 0.0 }); //currently using mercury's mass and distance to the sun
+	Body Venus(4.867e24, { 108.939e9, 0.0, 0.0 }, { 0.0, 34.79e3, 0.0 }, { 0.0, 0.0, 0.0 }); //distance is the aphelion, using minimum orbital speed
+	Body Earth(5.972e24, { 152.099e9, 0.0, 0.0 }, { 0.0, 29.29e3, 0.0 }, { 0.0, 0.0, 0.0 });
+	Body Mars(6.417e23, { 249.229e9, 0.0, 0.0 }, { 0.0, 21.97e3, 0.0 }, { 0.0, 0.0, 0.0 });
+	Body Jupiter(1898.19e24, { 816.618e9, 0.0, 0.0 }, { 0.0, 12.44e3, 0.0 }, { 0.0, 0.0, 0.0 });
+	
+	Body Bodies[6] = { Sun, Mercury, Venus, Earth, Mars, Jupiter };
 
-	enum coords{X, Y, Z};
 
 
+	/*for (int i = 0; i < Bodies[0].totalObjects(); i++) {
 
-	//initialising initial positions, velocities and accelerations of two bodies
+		for (int j = 0; j < Bodies[0].totalObjects() - 1; j++) {
 
+			if (i != j) {
+				
+				Bodies[i].acc = Bodies[i].acc + Bodies[j].acc;
+				Bodies
+
+			}
+
+		}
+
+	}
+	*/
 
 	for (int dt = 0; dt < 5; dt++) {
-		calculate_acceleration(sun, mercury);
-		update_position(sun, mercury);
-		update_velocity(sun, mercury);
+		calculate_acceleration(Bodies[0], Bodies[1]);
+		update_position(Bodies[0], Bodies[1]);
+		update_velocity(Bodies[0], Bodies[1]);
 	}
 
-
+	return 0;
+	
 }
 

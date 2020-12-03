@@ -1,5 +1,7 @@
 #pragma once
 
+using namespace std;
+
 //function declarations
 void calculate_acceleration(Body &body1, Body &body2);
 
