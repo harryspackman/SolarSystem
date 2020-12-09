@@ -22,27 +22,29 @@ int main()
 	Body Bodies[6] = { Sun, Mercury, Venus, Earth, Mars, Jupiter };
 
 
+	for (int dt = 0; dt < 5; dt++) {
 
-	/*for (int i = 0; i < Bodies[0].totalObjects(); i++) {
+		for (int i = 0; i < Bodies[0].totalObjects(); i++) {
 
-		for (int j = 0; j < Bodies[0].totalObjects() - 1; j++) {
+			for (int j = 0; j < Bodies[0].totalObjects(); j++) {
 
-			if (i != j) {
-				
-				Bodies[i].acc = Bodies[i].acc + Bodies[j].acc;
-				Bodies
+				if (i != j) {
+
+					calculate_acceleration(Bodies[i], Bodies[j]);
+
+				}
 
 			}
 
 		}
+		
+		for (int k = 0; k < Bodies[0].totalObjects(); k++) {
 
-	}
-	*/
+			update_position(Bodies[k]);
 
-	for (int dt = 0; dt < 5; dt++) {
-		calculate_acceleration(Bodies[0], Bodies[1]);
-		update_position(Bodies[0], Bodies[1]);
-		update_velocity(Bodies[0], Bodies[1]);
+			update_velocity(Bodies[k]);
+		}
+
 	}
 
 	return 0;
