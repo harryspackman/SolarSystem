@@ -6,7 +6,6 @@
 //adapted verlet integrals and vectors from "https://en.wikipedia.org/wiki/Verlet_integration"
 
 
-
 //passing into function time increment, and the two objects by reference
 //calculates gravitational acceleration between the two bodies
 void calculate_acceleration(Body &body1, Body &body2) {
@@ -49,22 +48,9 @@ void update_position(Body &body1) {
 
 	}
 
-	fstream myfile("mercury16.txt", fstream::trunc);
-	if (myfile.is_open()) {
-
-		myfile << body1.pos[0] << "\t" << body1.pos[1] << "\t" << body2.pos[0] << "\t" << body2.pos[1] << endl;
-
-	}
-
-	myfile.close();
-
-}
-
-void printData(void) {
 
 
 }
-
 
 //calculates new velocity
 void update_velocity(Body &body1) {
