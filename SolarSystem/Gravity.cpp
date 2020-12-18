@@ -3,8 +3,6 @@
 
 #define G 6.6708e-11
 
-//adapted verlet integrals and vectors from "https://en.wikipedia.org/wiki/Verlet_integration"
-
 
 //passing into function time increment, and the two objects by reference
 //calculates gravitational acceleration between the two bodies
@@ -25,8 +23,6 @@ void calculate_acceleration(Body &body1, Body &body2) {
 	for (int j = 0; j < 3; j++) {
 
 		body1.new_acc[j] += -G * body2.mass * (body1.pos[j] - body2.pos[j]) / pow(r, 3);
-		//body2.new_acc[j] = -G * body1.mass * (body2.pos[j] - body1.pos[j]) / pow(r, 3);
-
 
 	}
 
@@ -36,14 +32,11 @@ void calculate_acceleration(Body &body1, Body &body2) {
 //calculates new position
 void update_position(Body &body1) {
 
-	int dt = 1000;
+	int dt = 10;
 
 	for (int i = 0; i < 3; i++) {
-		body1.new_pos[i] = body1.pos[i] + body1.vel[i] * dt + body1.acc[i] * (dt*dt*0.5);
+		body1.new_pos[i] = body1.pos[i] + body1.vel[i] * dt;
 		body1.pos[i] = body1.new_pos[i];
-
-		//body2.new_pos[i] = body2.pos[i] + body2.vel[i] * dt + body2.acc[i] * (dt*dt*0.5);
-		//body2.pos[i] = body2.new_pos[i];
 
 
 	}
@@ -55,15 +48,11 @@ void update_position(Body &body1) {
 //calculates new velocity
 void update_velocity(Body &body1) {
 
-	int dt = 1000;
+	int dt = 10;
 
 	for (int i = 0; i < 3; i++) {
-		body1.new_vel[i] = body1.vel[i] + (body1.acc[i] + body1.new_acc[i])*(dt*0.5);
+		body1.new_vel[i] = body1.vel[i] + body1.new_acc[i]*dt*0.5;
 		body1.vel[i] = body1.new_vel[i];
-
-
-		//body2.new_vel[i] = body2.vel[i] + (body2.acc[i] + body2.new_acc[i])*(dt*0.5);
-		//body2.vel[i] = body2.new_vel[i];
 
 	}
 
