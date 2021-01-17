@@ -37,6 +37,7 @@ public:
 
 //constuctor function for body
 Body::Body(double a, array<double, 3> b, array <double, 3> c, array <double, 3> d) {
+	
 	mass = a;
 	pos = b;
 	vel = c;
