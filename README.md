@@ -6,4 +6,4 @@ The program is written in C++, the aim is to create a simulation of the solar sy
 
 The simulation loops over a number of time steps, for each timestep the gravitational accelerations on each planet is calculated and then the position and velocity of the planets are updated.
 
-The program outputs a text file with the X and Y positions of each of the planets which can then be plotted in the software of your choice.
+The program outputs a text file with the X and Y positions of each of the planets in tab separated columns which can then be plotted in the software of your choice.
