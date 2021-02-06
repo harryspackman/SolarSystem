@@ -1,6 +1,9 @@
 #pragma once
 #include <array>
+#include <vector>
 
+#define TIMESTEP 0.1
+#define G 6.6708e-11 //kgms-2
 
 
 using namespace std;
@@ -10,22 +13,37 @@ using namespace std;
 
 class Body {
 
+
+	friend class Printdata;
+
 private:
 
 	static int count;
-
-public:
-
 	double mass;
 	array <double,3> pos;
 	array <double, 3> vel;
 	array <double, 3> acc;
-	array <double, 3> new_pos;
-	array <double, 3> new_vel;
-	array <double, 3> new_acc;
 
 	
+public:
+
+	//constructor function for a body
 	Body(double, array <double, 3>, array <double, 3>, array <double, 3>);
+	void updatePosition(void);
+	void updateVelocity(void);
+	void calculateAcceleration(std::vector<Body>& Allbodies);
+	void clearAcceleration(void);
+
+
+
+
+	void updatePhysics(std::vector<Body> &Allbodies)
+	{
+		void updatePosition(void);
+		void updateVelocity(void);
+		void calculateAcceleration(std::vector<Body>& Allbodies);
+
+	}
 
 	static int totalObjects(void) {
 
@@ -33,17 +51,4 @@ public:
 	}
 
 };
-
-
-//constuctor function for body
-Body::Body(double a, array<double, 3> b, array <double, 3> c, array <double, 3> d) {
-	
-	mass = a;
-	pos = b;
-	vel = c;
-	acc = d;
-	
-	count++;
-
-}
 

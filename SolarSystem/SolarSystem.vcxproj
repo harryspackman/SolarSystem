@@ -155,6 +155,8 @@
     <ClInclude Include="Gravity.cpp" />
     <ClInclude Include="Gravity.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Printdata.h" />
+    <ClInclude Include="System.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -163,7 +165,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SolarSystem.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Printdata.cpp" />
+    <ClCompile Include="System.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
