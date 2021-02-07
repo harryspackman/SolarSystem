@@ -6,17 +6,17 @@
 
 double System::calculateangMomentum(const vector<Body>& Allbodies) {
 
-	double angularMomentum = 0;
+	double Momentum = 0;
 	vector<Body> Thesebodies = Allbodies;
 	Thesebodies.erase(Thesebodies.begin());
 
 	for (Body ThisBody : Thesebodies) {
 
-		angularMomentum += ThisBody.mass * ThisBody.vel[1] * ThisBody.pos[0];
+		Momentum += ThisBody.m_mass * ThisBody.vel[1];
 
 	}
 
-	return angularMomentum;
+	return Momentum;
 }
 
 double System::findBarycenter(const vector<Body>& AllBodies) {
@@ -28,9 +28,9 @@ double System::findBarycenter(const vector<Body>& AllBodies) {
 
 	for (Body ThisBody : AllBodies) {
 
-		numerator += ThisBody.mass * ThisBody.pos[0];
+		numerator += ThisBody.m_mass * ThisBody.pos[0];
 
-		totalMass += ThisBody.mass;
+		totalMass += ThisBody.m_mass;
 
 
 	}
@@ -52,6 +52,6 @@ void System::shiftPosition(double centreofMass, std::vector<Body> &Allbodies) {
 
 void System::setsunVelocity(double angMom, Body& body) {
 
-	body.vel[1] = angMom / (body.mass * body.pos[0]);
-	cout << body.vel[1] << endl;
+	body.vel[1] = angMom / (body.m_mass);
+
 }

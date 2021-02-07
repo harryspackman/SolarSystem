@@ -1,7 +1,7 @@
 
 %plots data from solarsystem.cpp
 
-data = load('system.txt');
+data = load('system1.txt');
 a = data(:,1);
 b = data(:,2);
 c = data(:,4);

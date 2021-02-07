@@ -7,10 +7,9 @@
 void Printdata::addPosition(Body& body) {
 
 	for (int i = 0; i < 3; i++)
-	{
-		//cout << body.pos[0];
+	{		
 		positions.push_back(body.pos[i]);
-		//cout << positions[i] << endl;
+		
 	}
 
 
@@ -18,27 +17,31 @@ void Printdata::addPosition(Body& body) {
 
 void Printdata::printPosition(void) {
 
-	fstream myfile("system.txt", fstream::app);
+	fstream myfile("system1.txt", fstream::app);
 
 	if (myfile.is_open())
 	{
-
-		for (auto it = positions.begin(); it != positions.end(); it++)
+		for (int i = 0; i < positions.size(); i++)
 		{
-			if (it != positions.end()-1)
+			if (i < positions.size()-1)
 			{
-				//myfile << positions[*it] << "\t";
-				//std::cout << positions[*it] << "\t";
+
+				myfile << positions[i] << "\t";
 			}
-
-			else 
+			
+			else
 			{
-				//myfile << positions[*it] << endl;
-
+				myfile << positions[i] << endl;
 			}
 		}
 
 
 	}
+
+}
+
+void Printdata::deletePosition() 
+{
+	positions.erase(positions.begin(), positions.end());
 
 }
