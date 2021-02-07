@@ -15,6 +15,7 @@ class Body {
 
 
 	friend class Printdata;
+	friend class System;
 
 private:
 
@@ -29,6 +30,7 @@ public:
 
 	//constructor function for a body
 	Body(double, array <double, 3>, array <double, 3>, array <double, 3>);
+
 	void updatePosition(void);
 	void updateVelocity(void);
 	void calculateAcceleration(std::vector<Body>& Allbodies);

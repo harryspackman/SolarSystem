@@ -1,13 +1,16 @@
+#include "pch.h"
 #include "Printdata.h"
 #include "Body.h"
 #include <fstream>
+#include <iostream>
 
 void Printdata::addPosition(Body& body) {
 
 	for (int i = 0; i < 3; i++)
 	{
+		//cout << body.pos[0];
 		positions.push_back(body.pos[i]);
-
+		//cout << positions[i] << endl;
 	}
 
 
@@ -24,13 +27,13 @@ void Printdata::printPosition(void) {
 		{
 			if (it != positions.end()-1)
 			{
-				myfile << positions[*it] << "\t";
-
+				//myfile << positions[*it] << "\t";
+				//std::cout << positions[*it] << "\t";
 			}
 
 			else 
 			{
-				myfile << positions[*it] << endl;
+				//myfile << positions[*it] << endl;
 
 			}
 		}

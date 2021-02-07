@@ -21,12 +21,6 @@
     <ClInclude Include="Body.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Gravity.cpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gravity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Printdata.h">
       <Filter>Header Files</Filter>
     </ClInclude>

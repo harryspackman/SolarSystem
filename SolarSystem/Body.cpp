@@ -1,12 +1,15 @@
+#include "pch.h"
 #include "Body.h"
+#include <iostream>
+
 
 //constuctor function for body
-Body::Body(double mass, array<double, 3> pos, array <double, 3> vel, array <double, 3> acc) {
+Body::Body(double mass, array<double, 3> position, array <double, 3> velocity, array <double, 3> acceleration) {
 
 	this->mass = mass;
-	this->pos = pos;
-	this->vel = vel;
-	this->acc = acc;
+	pos = position;
+	vel = velocity;
+	acc = acceleration;
 
 	count++;
 
@@ -17,6 +20,7 @@ void Body::updatePosition(void) {
 
 	for (int i = 0; i < 3; i++) {
 		pos[i] += vel[i] * TIMESTEP;
+		//cout << pos[i] << endl;
 	}
 
 	//print position
@@ -37,9 +41,9 @@ void Body::updateVelocity(void) {
 void Body::calculateAcceleration(std::vector<Body> &Allbodies) {
 
 
-
 	for (Body& thisBody : Allbodies)
 	{
+		
 		double squar[3];
 		double normal[3];
 
@@ -69,7 +73,6 @@ void Body::calculateAcceleration(std::vector<Body> &Allbodies) {
 
 }
 
-
 void Body::clearAcceleration(void) {
 
 	for (int i = 0; i < 3; i++) {
@@ -79,3 +82,4 @@ void Body::clearAcceleration(void) {
 
 
 }
+
