@@ -2,7 +2,7 @@
 #include <array>
 #include <vector>
 
-#define TIMESTEP 0.1
+#define TIMESTEP 8640
 #define G 6.6708e-11 //kgms-2
 
 
