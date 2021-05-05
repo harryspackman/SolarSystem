@@ -9,7 +9,7 @@ The simulation loops over a number of time steps, for each timestep the gravitat
 The program outputs a text file with the X and Y positions of each of the planets in tab separated columns which can then be plotted in the software of your choice.
 
 
-# Learning outcomes
+## Learning outcomes
 
 * C++: Logic control, printing to console, conditionals, loops, file input/output and preprocessor directives.
 * Object Oriented Programming: Classes and objects, contstructors and destructors, getters and setters, friend classes and inheritance.
