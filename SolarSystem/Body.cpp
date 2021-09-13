@@ -7,12 +7,10 @@
 //constuctor function for body
 Body::Body(double mass, std::vector<double> position, std::vector<double> velocity, std::vector<double> acceleration) {
 
-	this->m_mass = mass;
+	m_mass = mass;
 	pos = position;
 	vel = velocity;
 	acc = acceleration;
-
-	count++;
 
 }
 

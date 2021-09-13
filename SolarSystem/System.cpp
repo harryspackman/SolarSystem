@@ -22,10 +22,7 @@ double System::calculateangMomentum(const vector<Body>& Allbodies) {
 double System::findBarycenter(const vector<Body>& AllBodies) {
 
 	double numerator = 0, totalMass = 0;
-
-	int i = 0;
-
-
+	
 	for (Body ThisBody : AllBodies) {
 
 		numerator += ThisBody.m_mass * ThisBody.pos[0];
@@ -35,9 +32,7 @@ double System::findBarycenter(const vector<Body>& AllBodies) {
 
 	}
 
-	double barycenter = numerator / totalMass;
-
-	return barycenter;
+	return (numerator / totalMass);
 }
 
 void System::shiftPosition(double centreofMass, std::vector<Body> &Allbodies) {

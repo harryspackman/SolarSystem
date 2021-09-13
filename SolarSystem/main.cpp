@@ -6,9 +6,6 @@
 #include "System.h"
 #include "Printdata.h"
 
-
-int Body::count;
-
 //initialising objects all data taken from NASA planetary factsheets eg. https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html 
 Body Sun(2e30, { 0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 });// mass, position vector, velocity vector, acceleration vector
 //Body Mercury(0.75, { 0.387, 0.0, 0.0 }, { 0.0, 1.59, 0.0 }, { 0.0, 0.0, 0.0 }); //currently using mercury's mass and distance to the sun

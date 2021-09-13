@@ -19,7 +19,6 @@ class Body {
 
 private:
 
-	static int count;
 	double m_mass;
 	std::vector<double> pos;
 	std::vector<double> vel;
@@ -47,10 +46,6 @@ public:
 
 	}
 
-	static int totalObjects(void) {
-
-		return count;
-	}
 
 };
 
