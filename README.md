@@ -13,4 +13,5 @@ The program outputs a text file with the X and Y positions of each of the planet
 
 * C++: Logic control, printing to console, conditionals, loops, file input/output and preprocessor directives.
 * Object Oriented Programming: Classes and objects, contstructors and destructors, getters and setters, friend classes and inheritance.
+* TDD: Writing unit tests and designing code to be more testable.
 * Github: Pushing and pulling to remote, committing changes, using from command-line and branches.
