@@ -20,15 +20,15 @@ class Body {
 private:
 
 	double m_mass;
-	std::vector<double> pos;
-	std::vector<double> vel;
-	std::vector<double> acc;
+	std::array<double, 3> pos;
+	std::array<double, 3> vel;
+	std::array<double, 3> acc;
 
 	
 public:
 
 	//constructor function for a body
-	Body(double, std::vector<double>, std::vector<double>, std::vector<double>);
+	Body(double, std::array<double, 3>, std::array<double, 3>, std::array<double, 3>);
 
 	void updatePosition(void);
 	void updateVelocity(void);

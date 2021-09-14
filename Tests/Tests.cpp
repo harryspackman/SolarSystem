@@ -18,8 +18,8 @@ namespace Tests
 		TEST_METHOD(calculateBarycenterTest)
 		{
 			
-			Body testBody1(1, {0, 0, 0}, {0, 0, 0}, {0, 0, 0});
-			Body testBody2(1, {1, 0, 0}, {0, 0, 0}, {0, 0, 0});					   
+			Body testBody1(1, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}); // 1kg mass stationary at position (0, 0, 0)
+			Body testBody2(1, {1, 0, 0}, {0, 0, 0}, {0, 0, 0});	// 1kg mass stationary at position (1, 0, 0)			   
 			
 			vector<Body> Bodies = { testBody1, testBody2 };
 
@@ -30,5 +30,6 @@ namespace Tests
 			Assert::AreEqual(barry, 0.5);
 
 		}
+
 	};
 }

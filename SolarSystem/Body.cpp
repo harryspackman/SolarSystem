@@ -5,7 +5,7 @@
 
 
 //constuctor function for body
-Body::Body(double mass, std::vector<double> position, std::vector<double> velocity, std::vector<double> acceleration) {
+Body::Body(double mass, std::array<double, 3> position, std::array<double, 3> velocity, std::array<double, 3> acceleration) {
 
 	m_mass = mass;
 	pos = position;
